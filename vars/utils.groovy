@@ -220,22 +220,8 @@ def sendMattermostMessage(message, idCanal) {
 }
 
 enum CANAUX_MATTERMOST {
-    DEFAULT_PROJECT("ex5y4gjnztdrpcecns6onpjhph"),
-    PROJET_GOAL("y3m5p65zhib93m4ij7841rtwno"),
-    PROJET_REFONTE_BO("uewiezpbctfofku3gwunf3hkhh"),
-    PROJET_PAYPAL("pjhzyc5z7ifd8yh9kzxweu8byo"),
-    PROJET_PROXI("zba4md8tbt85id9qeigz96ebfo"),
-    PROJET_HP_PART("agahe3xatpnddn4do8korqebpa"),
-    PROJET_MIGRATION_LPFR("7ein8rxsoibd5f1qg9tzfhw35o"),
-    RELEASE_5_1_0("1y3m8oryzpfnfkgzak1sj4qqce"),
-    RELEASE_5_2_0("zxgznc97jtdfzqujjzi8knj49y"),
-    RELEASE_5_3_0("o98pky843tbs5x7an7ocica5ye"),
-    RELEASE_5_4_0("7h6z6e5ebtyapgbfor91rpmush"),
-    RELEASE_5_4_1("9bkw4xwa4ifq5korh34pgjuorr"),
-    RELEASE_5_5_0("j78gocupijbkxk6hcka4usj3ze"),
-    RELEASE_5_6_0("8onowtydsffx3qydtwwm6p7qfc"),
-    RELEASE_5_7_0("6xf6owb4z3fwzxgdfdywhumour"),
-    RELEASE_5_8_0("kqumakmrwbbgb8xtjdwrp9ance")
+    DEFAULT_TEST2("xxxxxxx"),
+    PROJET_TEST1("xxxxxxxx")
 
     String id
 
