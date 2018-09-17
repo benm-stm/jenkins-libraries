@@ -1,5 +1,5 @@
 def multiSelect(list, list_name, project_name) {
-	return new ExtendedChoiceParameterDefinition(list_name, 
+	return (new ExtendedChoiceParameterDefinition(list_name, 
 			"PT_MULTI_SELECT", 
 			list, 
 			project_name,
@@ -29,5 +29,5 @@ def multiSelect(list, list_name, project_name) {
 			false, 
 			30, 
 			"multiselect", 
-			",") 
+			","))
 }
