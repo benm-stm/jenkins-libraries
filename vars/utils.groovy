@@ -38,7 +38,6 @@ def appendStringAfterFirstMatchInFile(stringToAdd, stringToMatch, stringFormater
     //entry = "\\ \\ \\ \\ \\ \\ \\ \\ - { ${it} }"
     sh "grep -qF \"${stringToAdd}\" ${file} || sed -i '/${stringToMatch}/a ${entry}' ${file}"
     sh "cat ${file}"
-    }
 }
 
 def getFolderNamesList(isLastVersion = false) {
