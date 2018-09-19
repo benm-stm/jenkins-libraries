@@ -21,7 +21,7 @@ def key_value_parser(file, key_param) {
 
 def getFileNamesListUnderPath(path, filters, remove_extention=false) {
     filters += " | sed -e 's@/@@g'"
-    if ( remove_extension )
+    if ( remove_extention )
         filters += " | sed 's/\\.[^.]*\$//'"
     list = sh (
         script: "cd ${path} && ls | grep ${filters}",
