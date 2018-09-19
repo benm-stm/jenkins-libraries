@@ -429,3 +429,11 @@ def debugGitlabVars(logDebug) {
         sh script: 'env | grep "^git" | awk \'{print "DEBUG : "$0}\''
     }
 }
+
+def gitPushChanges(buildNbr, userName, userEmail, commitMsg, branch='master') {
+     sh "git config --global user.email '${userEmail}'"
+     sh "git config --global user.name '${userName}'"
+     sh "git add *"
+     sh "git commit -m'[jenkins-${BUILD_NUMBER}]: ${commitMsg}'"
+     sh "git push --set-upstream origin ${branch}"
+}

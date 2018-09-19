@@ -40,6 +40,10 @@ def appendStringAfterFirstMatchInFile(stringToAdd, stringToMatch, stringFormater
     sh "cat ${file}"
 }
 
+def RemoveStringOccurencesFromFiles(pattern, file) {
+    sh "sed -i '/${pattern,}/d' $file
+}
+
 def getFolderNamesList(isLastVersion = false) {
     def caddi_rpm_version = sh (
             //script: "cd /data/eboutique_releases && ls -dt */ | ${regex} sed -e 's/\\///g' | head -n1",
