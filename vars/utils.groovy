@@ -30,6 +30,16 @@ def getFileNamesListUnderPath(path, filters, remove_extention=false) {
     return list
 }
 
+def appendStringAfterFirstMatchInFile(stringToAdd, stringToMatch, stringFormater, delimiter="--delimiter--", file) {
+    entry = sh (
+                script: "sed -i 's/--delimiter--/${stringToAdd}/'",
+                returnStdout: true
+            )
+    //entry = "\\ \\ \\ \\ \\ \\ \\ \\ - { ${it} }"
+    sh "grep -qF \"${stringToAdd}\" ${file} || sed -i '/${stringToMatch}/a ${entry}' ${file}"
+    sh "cat ${file}"
+    }
+}
 
 def getFolderNamesList(isLastVersion = false) {
     def caddi_rpm_version = sh (
