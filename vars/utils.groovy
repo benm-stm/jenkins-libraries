@@ -19,10 +19,9 @@ def key_value_parser(file, key_param) {
     return result
 }
 
-def getFileNamesListUnderPath(path) {
+def getFileNamesListUnderPath(path, filter) {
     list = sh (
-        //script: "cd /data/eboutique_releases && ls -dt */ | ${regex} sed -e 's/\\//\\n/g'| sed -e 's/ //g'",
-        script: "cd ${path} && ls | grep .tar.gz | sed -e 's@/@@g'",
+        script: "cd ${path} && ls | grep ${filter} | sed -e 's@/@@g'",
         returnStdout: true
     )
     return list
