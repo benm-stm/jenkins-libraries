@@ -32,7 +32,7 @@ def getFileNamesListUnderPath(path, filters, remove_extention=false) {
 
 def appendStringAfterFirstMatchInFile(stringToAdd, stringToMatch, stringFormater, delimiter="--delimiter--", file) {
     entry = sh (
-                script: "sed -i 's/${delimiter}/${stringToAdd}/'",
+                script: "sed -i 's/${delimiter}/\"${stringToAdd}\"/'",
                 returnStdout: true
             )
     //entry = "\\ \\ \\ \\ \\ \\ \\ \\ - { ${it} }"
