@@ -19,9 +19,12 @@ def key_value_parser(file, key_param) {
     return result
 }
 
-def getFileNamesListUnderPath(path, filter) {
+def getFileNamesListUnderPath(path, filters, remove_extention=false) {
+    filter += " | sed -e 's@/@@g'"
+    if ( remove_extensions )
+       filters += " | sed 's/\\.[^.]*$//'"
     list = sh (
-        script: "cd ${path} && ls | grep ${filter} | sed -e 's@/@@g'",
+        script: "cd ${path} && ls | grep ${filters}",
         returnStdout: true
     )
     return list
