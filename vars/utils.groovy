@@ -41,7 +41,7 @@ def appendStringAfterFirstMatchInFile(stringToAdd, stringToMatch, stringFormater
 }
 
 def RemoveStringOccurencesFromFiles(pattern, file) {
-    sh "sed -i '/${pattern,}/d' $file
+    sh "sed -i '/${pattern}/d' $file
 }
 
 def getFolderNamesList(isLastVersion = false) {
