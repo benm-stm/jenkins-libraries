@@ -24,7 +24,7 @@ def getFileNamesListUnderPath(path, filters, remove_extention=false) {
     if ( remove_extention )
         filters += " | sed 's/\\.[^.]*\$//'"
     list = sh (
-        script: "cd ${path} && ls | grep ${filters}",
+        script: "ls -1 ${path} | grep ${filters}",
         returnStdout: true
     )
     return list
