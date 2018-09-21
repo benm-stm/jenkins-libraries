@@ -1,10 +1,10 @@
 // vars/utils.groovy
 
 def sanityzeInputOfRegex(str) {
-    str.replaceAll("/", "\\\\\\/");
-    str.replaceAll('"', '\\\\\\"');
-    str.replaceAll("'", "\\\\\\'");
-    str.replaceAll("^", "\\\\\\^"); 
+    str = str.replaceAll("/", "\\\\\\/");
+    str = str.replaceAll('"', '\\\\\\"');
+    str = str.replaceAll("'", "\\\\\\'");
+    str = str.replaceAll("^", "\\\\\\^"); 
     //you can add more escapes here
     return str
 
