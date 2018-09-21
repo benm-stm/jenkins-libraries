@@ -4,8 +4,7 @@ def sanityzeInputOfRegex(str) {
     str.replaceAll("/", "\\\\\\/");
     str.replaceAll('"', '\\\\\\"');
     str.replaceAll("'", "\\\\\\'");
-    str.replaceAll("^", "\\\\\\^");
-    str.replaceAll("\$", "\\\\\\$");
+    str.replaceAll("^", "\\\\\\^"); 
     //you can add more escapes here
     return str
 
