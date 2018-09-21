@@ -1,5 +1,15 @@
 // vars/utils.groovy
 
+def sanityzeInputOfRegex(str) {
+    str.replaceAll("/", "\\\\\\/");
+    str.replaceAll('"', '\\\\\\"');
+    str.replaceAll("'", "\\\\\\'");
+    str.replaceAll("^", "\\\\\\^");
+    str.replaceAll("$", "\\\\\\$");
+    //you can add more escapes here
+    return str
+
+}
 def key_value_parser(file, key_param) {
     //echo "reading entries file"
     str = fileToString(file)
