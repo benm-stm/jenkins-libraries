@@ -38,13 +38,13 @@ def getFileNamesListUnderPath(path, filters, remove_extention=false) {
     return list
 }
 
-def appendStringAfterFirstMatchInFile(stringToAdd, stringToMatch, stringFormater, delimiter="--delimiter--", file) {
+def appendStringAfterFirstMatchInFile(stringToSearchFor, stringToAdd, stringToMatch, stringFormater, delimiter="--delimiter--", file) {
     entry = sh (
                 script: "echo ${stringFormater} | sed -e 's/${delimiter}/${stringToAdd}/g'",
                 returnStdout: true
             )
     //entry = "\\ \\ \\ \\ \\ \\ \\ \\ - { ${it} }"
-    sh "grep -qF \"${stringToAdd}\" ${file} || sed -i '/${stringToMatch}/a ${entry}' ${file}"
+    sh "grep -qF \"${stringToSearchFor}\" ${file} || sed -i '/${stringToMatch}/a ${entry}' ${file}"
     sh "cat ${file}"
 }
 
