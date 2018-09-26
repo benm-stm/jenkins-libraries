@@ -46,8 +46,6 @@ def appendStringAfterFirstMatchInFile(stringToSearchFor, stringToAdd, stringToMa
     //entry = "\\ \\ \\ \\ \\ \\ \\ \\ - { ${it} }"
     print("\nraf\n")
     sh "grep -F '${stringToSearchFor}' ${file}"
-   
-    sh "grep -F \"name: mrben-mansour, state: present, key_pub: \"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCeLz0bfN+Z3TJFWgMbx4VgRNYuvK1uPk3p5HnQU3uvVqwf7eT6Xde3ioBvdG2EGiBHGS3RbL7Q4Co29mRA0HiLmxMcakTdFhI9q46MlGvqn9X3Ytj2ovTScLCqU9W/bP2lp1epjkW4kQkubhr/VGm6P76Ern69aGfRvRtTKGBzPRcVg+HfBLcykz4IITyef/QIyqY9CBbNxJXQCfxvUOKRWXHAmSYY5A2cCkGYWR1JLqymJ/Forrw+xDtMDi3m4kf5KEBM3bbKYXn3EfSlieQ0ILDc+RmTrivydMs9TOLNB0OTlJhpRfxIbnoVci4FZqNdIsFrrz/EHUti2ZObfdGD raf@raf\"\" ${file}"
     
     sh "grep -qF \"${stringToSearchFor}\" ${file} || sed -i '/${stringToMatch}/a ${entry}' ${file}"
     sh "cat ${file}"
