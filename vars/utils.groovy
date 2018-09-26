@@ -44,7 +44,9 @@ def appendStringAfterFirstMatchInFile(stringToSearchFor, stringToAdd, stringToMa
                 returnStdout: true
             )
     //entry = "\\ \\ \\ \\ \\ \\ \\ \\ - { ${it} }"
-    print("\n${stringToSearchFor}\n")
+    print("\nraf\n")
+    sh "grep -F \\\"${stringToSearchFor}\\\" ${file}"
+    
     sh "grep -qF \"${stringToSearchFor}\" ${file} || sed -i '/${stringToMatch}/a ${entry}' ${file}"
     sh "cat ${file}"
 }
